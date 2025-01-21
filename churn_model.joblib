@@ -1,0 +1,19 @@
+from sklearn.linear_model import LogisticRegression
+from joblib import dump
+import pandas as pd
+
+# Load and preprocess your dataset (replace with your actual data and preprocessing steps)
+data = pd.read_csv("WA_Fn-UseC_-Telco-Customer-Churn.csv")
+# Add your preprocessing code here...
+
+# Define features (X) and target (y)
+X = ...
+y = ...
+
+# Train model
+model = LogisticRegression(max_iter=1000)
+model.fit(X, y)
+
+# Save the model
+dump(model, "churn_model.joblib")
+print("Model saved successfully with joblib.")
